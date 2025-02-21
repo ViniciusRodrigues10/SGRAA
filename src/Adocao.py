@@ -2,6 +2,8 @@ from datetime import date
 
 class Adocao:
     def __init__(self, id: int, idAnimal: int, idPretendente: int, data: date, termoResponsabilidade: str):
+        if not termoResponsabilidade:
+            raise ValueError("O termo de responsabilidade não pode estar vazio.")
         self.id = id
         self.idAnimal = idAnimal
         self.idPretendente = idPretendente
